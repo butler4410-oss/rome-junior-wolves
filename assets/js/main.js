@@ -64,7 +64,7 @@
           '</a>' +
           '<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>' +
           '<nav class="nav" id="primaryNav" aria-label="Primary">' + links +
-            '<a class="btn btn-gold btn-sm" href="' + esc(org.registerUrl) + '"' + regAttrs() + '>Register</a>' +
+            '<a class="btn btn-gold btn-sm" href="' + esc(org.registerUrl) + '"' + regAttrs() + '>' + esc(org.ctaLabel || "Register") + '</a>' +
           '</nav>' +
         '</div>' +
       '</header>';
@@ -135,6 +135,7 @@
     });
     $all("[data-leagueapps]").forEach(function (a) { a.href = org.leagueAppsUrl; a.target = "_blank"; a.rel = "noopener"; });
     $all("[data-fb]").forEach(function (a) { a.href = org.facebook; a.target = "_blank"; a.rel = "noopener"; });
+    $all("[data-ig]").forEach(function (a) { if (org.instagram) { a.href = org.instagram; a.target = "_blank"; a.rel = "noopener"; } });
     $all("[data-email]").forEach(function (a) { a.href = "mailto:" + org.email; if (!a.textContent.trim()) a.textContent = org.email; });
     $all("[data-map]").forEach(function (a) { a.href = org.field.mapUrl; a.target = "_blank"; a.rel = "noopener"; });
     $all("[data-text=email]").forEach(function (n) { n.textContent = org.email; });

@@ -29,12 +29,11 @@ window.RJW = {
     email:       "romejuniorwolves@gmail.com",
     phone:       "",  // add a public phone number if you have one
     facebook:    "https://www.facebook.com/romejuniorwolves",
-    instagram:   "",  // add Instagram URL if you have one
-    // PREVIEW: the site's Register button launches our new sign-up walkthrough in preview mode
-    //   (full experience, but nothing is saved or submitted). LeagueApps stays one click away inside it.
-    //   • For real LeagueApps sign-ups now: set registerUrl to the leagueAppsUrl value below.
-    //   • To go fully live with our engine later: set registerUrl to "register.html" (after Supabase + real waiver text).
-    registerUrl:   "register.html?preview=1",
+    instagram:   "https://www.instagram.com/romejuniorwolves/",
+    // 2026 team rosters are SET — registration is closed. Site CTAs point to Camps & Training.
+    //   (Directors can still preview the future sign-up wizard at /register.html?preview=1 — unlisted.)
+    ctaLabel:      "Camps & Training",
+    registerUrl:   "programs.html#camps",
     leagueAppsUrl: "https://cobbfootball.leagueapps.com/clubteams/4572134-2025--rome-junior-wolves-football--cheerleading",
     league:        "Cobb Football League",
     highSchool:  { name: "Rome Wolves Athletics", url: "https://www.romewolvesathletics.com/" },
@@ -145,9 +144,9 @@ window.RJW = {
     },
     {
       date: "2026-03-10",
-      category: "Registration",
-      title: "2026 sign-ups are OPEN",
-      body: "Registration for the 2026 season is open for football and cheer. Spots are limited by division — secure your athlete's place today. Offseason training has begun on Tuesdays & Thursdays."
+      category: "Announcement",
+      title: "2026 rosters are set — camps & training continue",
+      body: "Our 2026 teams are locked in. Didn't grab a roster spot this year? You can still get in the game: offseason training runs Tuesdays & Thursdays, and we host youth camps through the season. Email us or follow on Facebook to join."
     }
   ],
 
