@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teams &amp; Rosters — Rome Junior Wolves</title>
+  <meta name="description" content="Rome Junior Wolves teams, rosters, and player profiles by division. Tap any player to see their profile.">
+  <meta name="theme-color" content="#9E1B32">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <link rel="canonical" href="https://romejrwolves.com/teams.html">
+  <meta property="og:site_name" content="Rome Junior Wolves">
+  <meta property="og:title" content="Teams &amp; Rosters — Rome Junior Wolves">
+  <meta property="og:description" content="Rome Junior Wolves teams, rosters, and player profiles by division. Tap any player to see their profile.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://romejrwolves.com/teams.html">
+  <meta property="og:image" content="https://romejrwolves.com/assets/img/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Teams &amp; Rosters — Rome Junior Wolves">
+  <meta name="twitter:description" content="Rome Junior Wolves teams, rosters, and player profiles by division. Tap any player to see their profile.">
+  <meta name="twitter:image" content="https://romejrwolves.com/assets/img/hero.jpg">
+</head>
+<body data-page="teams">
+  <div id="site-header"></div>
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="paw-bg" style="background-image:url(assets/img/logo-circle.png);background-size:90px"></div>
+      <div class="wrap">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Teams</div>
+        <h1>Teams &amp; Rosters</h1>
+        <p class="lead" style="color:rgba(255,255,255,.85)">Meet the Pack. Rosters are organized by division — tap any player card to open their profile.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap" style="max-width:960px">
+        <div class="notice reveal mb-2 admin-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          <div><strong>Coaches &amp; team parents:</strong> rosters live in <code>assets/js/data.js</code> under <code>teams</code>. Add each player's number, name, position, and grade — they'll appear here automatically, with a tap-to-open profile. <em>(This note only shows while building locally.)</em></div>
+        </div>
+        <div data-render="teams"></div>
+      </div>
+    </section>
+
+    <section class="section cta-band tight">
+      <div class="wrap">
+        <h2>Not on a Roster Yet?</h2>
+        <p class="lead mt-2" style="color:rgba(255,255,255,.85);margin-inline:auto;max-width:50ch">Registration is open. Get your athlete placed on a Junior Wolves team for the 2026 season.</p>
+        <div class="center mt-3"><a class="btn btn-gold btn-lg" data-register href="#">Register Now</a></div>
+      </div>
+    </section>
+
+  </main>
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

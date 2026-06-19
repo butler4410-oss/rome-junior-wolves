@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register — Rome Junior Wolves</title>
+  <meta name="description" content="Register your athlete for Rome Junior Wolves youth football or cheerleading. Quick, seamless sign-up.">
+  <meta name="theme-color" content="#9E1B32">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <meta name="robots" content="noindex"><!-- dormant until our own registration engine is approved & live -->
+  <link rel="canonical" href="https://romejrwolves.com/register.html">
+  <meta property="og:site_name" content="Rome Junior Wolves">
+  <meta property="og:title" content="Register — Rome Junior Wolves">
+  <meta property="og:description" content="Register your athlete for Rome Junior Wolves youth football or cheerleading. Quick, seamless sign-up.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://romejrwolves.com/register.html">
+  <meta property="og:image" content="https://romejrwolves.com/assets/img/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Register — Rome Junior Wolves">
+  <meta name="twitter:description" content="Register your athlete for Rome Junior Wolves youth football or cheerleading. Quick, seamless sign-up.">
+  <meta name="twitter:image" content="https://romejrwolves.com/assets/img/hero.jpg">
+</head>
+<body data-page="register">
+  <div id="site-header"></div>
+  <main id="main">
+
+    <section class="page-hero" style="padding-bottom:3rem">
+      <div class="paw-bg" style="background-image:url(assets/img/logo-circle.png);background-size:90px"></div>
+      <div class="wrap">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Register</div>
+        <h1>Join the Pack</h1>
+        <p class="lead" style="color:rgba(255,255,255,.85)">Register your athlete for the 2026 season in just a few minutes. Football &amp; cheer, ages 5–12.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:clamp(40px,6vw,70px)">
+      <div class="wrap">
+        <div class="wizard">
+
+          <div id="modeBanner" class="mode-banner" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+            <span><strong>Test mode:</strong> registrations are saved in this browser and emailed to the program. Connect Supabase (see <code>REGISTRATION-SETUP.md</code>) to store them in your database.</span>
+          </div>
+
+          <ol class="wiz-progress" id="wizProgress" aria-hidden="true">
+            <li data-i="0"><div class="dot"></div>Program</li>
+            <li data-i="1"><div class="dot"></div>Athlete</li>
+            <li data-i="2"><div class="dot"></div>Guardian</li>
+            <li data-i="3"><div class="dot"></div>Emergency</li>
+            <li data-i="4"><div class="dot"></div>Waivers</li>
+            <li data-i="5"><div class="dot"></div>Review</li>
+          </ol>
+
+          <form id="regForm" class="wiz-card" novalidate>
+            <div class="wiz-head" aria-live="polite">
+              <div class="step-no" id="stepNo">Step 1 of 6</div>
+              <h2 id="stepTitle">Program &amp; Division</h2>
+            </div>
+
+            <div class="wiz-body">
+
+              <!-- STEP 1 — PROGRAM -->
+              <fieldset class="wiz-step active" data-step="0">
+                <legend class="lbl" style="margin-bottom:.8rem">Which program is your athlete joining? <span class="req">*</span></legend>
+                <div class="choice-grid" role="radiogroup" aria-label="Program">
+                  <label class="choice"><input type="radio" name="program" value="Football" required>
+                    <span class="box"><h4>🏈 Football</h4><p>Tackle football, ages 5–12. Fundamentals, teamwork, and Friday-night dreams.</p></span></label>
+                  <label class="choice"><input type="radio" name="program" value="Cheer">
+                    <span class="box"><h4>📣 Cheerleading</h4><p>Sideline &amp; spirit cheer, ages 5–12. Bring the energy every game day.</p></span></label>
+                </div>
+                <div class="field" style="margin-top:1.4rem">
+                  <label for="division">Division / Age Group <span class="req">*</span></label>
+                  <select id="division" name="division" required><option value="">Select a division…</option></select>
+                  <span class="hint">Not sure? Pick your best guess — we confirm placement by age at sign-up.</span>
+                </div>
+                <input type="hidden" name="season" value="2026">
+              </fieldset>
+
+              <!-- STEP 2 — ATHLETE -->
+              <fieldset class="wiz-step" data-step="1">
+                <div class="field-row">
+                  <div class="field"><label for="athlete_first">Athlete first name <span class="req">*</span></label><input id="athlete_first" name="athlete_first" type="text" autocomplete="off" required></div>
+                  <div class="field"><label for="athlete_last">Athlete last name <span class="req">*</span></label><input id="athlete_last" name="athlete_last" type="text" autocomplete="off" required></div>
+                </div>
+                <div class="field-row three">
+                  <div class="field"><label for="athlete_dob">Date of birth <span class="req">*</span></label><input id="athlete_dob" name="athlete_dob" type="date" required></div>
+                  <div class="field"><label for="grade">Grade (Fall '26)</label><select id="grade" name="grade"><option value="">—</option></select></div>
+                  <div class="field"><label for="size">Jersey size</label><select id="size" name="size"><option value="">—</option></select></div>
+                </div>
+                <div class="field-row">
+                  <div class="field"><label for="school">School</label><input id="school" name="school" type="text"></div>
+                  <div class="field"><label for="gender">Gender</label><select id="gender" name="gender"><option value="">Prefer not to say</option><option>Male</option><option>Female</option></select></div>
+                </div>
+                <div class="field-row">
+                  <div class="field"><span class="lbl">Returning player?</span>
+                    <div style="display:flex;gap:1.5rem;padding-top:.4rem">
+                      <label style="font-weight:500"><input type="radio" name="returning" value="Yes" style="width:auto;margin-right:.4rem">Yes</label>
+                      <label style="font-weight:500"><input type="radio" name="returning" value="No" style="width:auto;margin-right:.4rem" checked>No</label>
+                    </div>
+                  </div>
+                  <div class="field"><label for="experience">Years of experience</label><input id="experience" name="experience" type="number" min="0" max="12" placeholder="0"></div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 3 — GUARDIAN -->
+              <fieldset class="wiz-step" data-step="2">
+                <div class="field"><label for="guardian_name">Parent / Guardian full name <span class="req">*</span></label><input id="guardian_name" name="guardian_name" type="text" autocomplete="name" required></div>
+                <div class="field-row">
+                  <div class="field"><label for="relationship">Relationship to athlete <span class="req">*</span></label>
+                    <select id="relationship" name="relationship" required><option value="">Select…</option><option>Mother</option><option>Father</option><option>Guardian</option><option>Grandparent</option><option>Other</option></select></div>
+                  <div class="field"><label for="phone">Mobile phone <span class="req">*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="(706) 555-0123"></div>
+                </div>
+                <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"><span class="hint">We send confirmation, schedules, and payment details here.</span></div>
+                <div class="field"><label for="address">Street address</label><input id="address" name="address" type="text" autocomplete="address-line1"></div>
+                <div class="field-row three">
+                  <div class="field"><label for="city">City</label><input id="city" name="city" type="text" value="Rome"></div>
+                  <div class="field"><label for="state">State</label><input id="state" name="state" type="text" value="GA" maxlength="2"></div>
+                  <div class="field"><label for="zip">ZIP</label><input id="zip" name="zip" type="text" inputmode="numeric" value="30161"></div>
+                </div>
+                <div class="field-row">
+                  <div class="field"><label for="guardian2_name">Second guardian (optional)</label><input id="guardian2_name" name="guardian2_name" type="text"></div>
+                  <div class="field"><label for="guardian2_phone">Their phone</label><input id="guardian2_phone" name="guardian2_phone" type="tel"></div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 4 — EMERGENCY & MEDICAL -->
+              <fieldset class="wiz-step" data-step="3">
+                <div class="field-row">
+                  <div class="field"><label for="emergency_name">Emergency contact name <span class="req">*</span></label><input id="emergency_name" name="emergency_name" type="text" required></div>
+                  <div class="field"><label for="emergency_phone">Emergency contact phone <span class="req">*</span></label><input id="emergency_phone" name="emergency_phone" type="tel" required></div>
+                </div>
+                <div class="field"><label for="emergency_rel">Relationship to athlete</label><input id="emergency_rel" name="emergency_rel" type="text" placeholder="Aunt, neighbor, etc."></div>
+                <div class="field"><label for="medical">Allergies / medical conditions we should know about</label><textarea id="medical" name="medical" rows="3" placeholder="None, or list anything our coaches should be aware of."></textarea></div>
+                <div class="field"><label for="doctor">Physician name &amp; phone (optional)</label><input id="doctor" name="doctor" type="text"></div>
+              </fieldset>
+
+              <!-- STEP 5 — DOCUMENTS & WAIVERS -->
+              <fieldset class="wiz-step" data-step="4">
+                <div class="field">
+                  <label for="doc">Birth certificate (optional)</label>
+                  <input id="doc" name="doc" type="file" accept="image/*,.pdf">
+                  <span class="hint">Leagues require proof of age. Upload now, or bring a copy to equipment hand-out. Stored privately — only program staff can view it.</span>
+                </div>
+
+                <h3 style="font-size:1.1rem;text-transform:uppercase;margin:1.6rem 0 .6rem">Agreements</h3>
+                <div class="waiver-text">
+                  <strong>Acknowledgment of Risk &amp; Liability Waiver.</strong> I understand that participation in tackle football and cheerleading involves inherent risks of injury. I consent to my child's participation, authorize emergency medical treatment if I cannot be reached, and release the Rome Junior Wolves, its coaches, and volunteers from liability to the fullest extent permitted by law. <em>(Program: replace this with your organization's official waiver language before launch.)</em>
+                </div>
+                <div class="check"><input id="agree_waiver" name="agree_waiver" type="checkbox" required><label for="agree_waiver">I have read and agree to the Acknowledgment of Risk &amp; Liability Waiver. <span class="req">*</span></label></div>
+                <div class="check"><input id="agree_conduct" name="agree_conduct" type="checkbox" required><label for="agree_conduct">My family agrees to the Junior Wolves Code of Conduct (good sportsmanship from players, parents, and fans). <span class="req">*</span></label></div>
+                <div class="check"><input id="photo_release" name="photo_release" type="checkbox"><label for="photo_release">I allow the program to use photos/video of my athlete for team promotion (optional).</label></div>
+
+                <div class="field-row" style="margin-top:1.4rem">
+                  <div class="field"><label for="signature">Parent/guardian signature (type full name) <span class="req">*</span></label><input id="signature" name="signature" type="text" required></div>
+                  <div class="field"><label for="signed_date">Date <span class="req">*</span></label><input id="signed_date" name="signed_date" type="date" required></div>
+                </div>
+              </fieldset>
+
+              <!-- STEP 6 — REVIEW -->
+              <fieldset class="wiz-step" data-step="5">
+                <p class="lead" style="margin-bottom:1.4rem">Almost there! Please review your information before submitting.</p>
+                <div id="reviewArea"></div>
+                <div class="notice" id="payNote" style="margin-top:1.4rem">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+                  <div></div>
+                </div>
+              </fieldset>
+
+            </div>
+
+            <div class="wiz-foot">
+              <button type="button" class="btn btn-outline" id="btnBack" hidden>← Back</button>
+              <div class="spacer"></div>
+              <a class="btn btn-ghost btn-sm" data-leagueapps href="#" style="color:var(--text-soft);border-color:var(--line)">Prefer the old sign-up?</a>
+              <button type="button" class="btn btn-primary" id="btnNext">Next →</button>
+              <button type="submit" class="btn btn-gold" id="btnSubmit" hidden>Submit Registration</button>
+            </div>
+          </form>
+
+          <!-- CONFIRMATION (shown after submit) -->
+          <div id="confirm" class="wiz-card" hidden>
+            <div class="wiz-confirm" style="padding:3rem 2rem">
+              <div class="badge-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+              <h2 style="font-size:1.9rem;text-transform:uppercase">You're in the Pack!</h2>
+              <p class="lead mt-1" id="confirmMsg" style="margin-inline:auto;max-width:48ch"></p>
+              <div class="hero-cta center-x" style="justify-content:center;margin-top:2rem">
+                <a class="btn btn-primary" href="index.html">Back to Home</a>
+                <button type="button" class="btn btn-outline" id="btnAnother">Register Another Athlete</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/register.js"></script>
+</body>
+</html>
