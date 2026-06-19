@@ -30,10 +30,10 @@ window.RJW = {
     phone:       "",  // add a public phone number if you have one
     facebook:    "https://www.facebook.com/romejuniorwolves",
     instagram:   "https://www.instagram.com/romejuniorwolves/",
-    // 2026 team rosters are SET — registration is closed. Site CTAs point to Camps & Training.
-    //   (Directors can still preview the future sign-up wizard at /register.html?preview=1 — unlisted.)
+    // 2026 team rosters are set. "Camps & Training" CTAs open the live sign-up wizard
+    //   (register.html), used for camps & offseason training. ?preview=1 = walkthrough that submits nothing.
     ctaLabel:      "Camps & Training",
-    registerUrl:   "programs.html#camps",
+    registerUrl:   "register.html",
     leagueAppsUrl: "https://cobbfootball.leagueapps.com/clubteams/4572134-2025--rome-junior-wolves-football--cheerleading",
     league:        "Cobb Football League",
     highSchool:  { name: "Rome Wolves Athletics", url: "https://www.romewolvesathletics.com/" },

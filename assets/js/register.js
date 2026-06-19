@@ -23,7 +23,7 @@
   var isLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
   var qs = new URLSearchParams(location.search);
   var isDemo = qs.get("demo") === "1" || qs.get("preview") === "1";  // unlisted preview link for the directors
-  if (!supaReady && !isLocal && !isDemo) {
+  if (false) {  // gate disabled — the camps & training sign-up is live
     var wiz = document.querySelector(".wizard");
     var portal = (D.org && D.org.leagueAppsUrl) || "#";
     if (wiz) {
