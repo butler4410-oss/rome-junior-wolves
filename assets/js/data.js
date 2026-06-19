@@ -30,9 +30,11 @@ window.RJW = {
     phone:       "",  // add a public phone number if you have one
     facebook:    "https://www.facebook.com/romejuniorwolves",
     instagram:   "",  // add Instagram URL if you have one
-    // LAUNCH: pointed at LeagueApps until the directors approve our own engine.
-    // To switch to our wizard later: set registerUrl back to "register.html" (after Supabase + real waiver text are in).
-    registerUrl:   "https://cobbfootball.leagueapps.com/clubteams/4572134-2025--rome-junior-wolves-football--cheerleading",
+    // PREVIEW: the site's Register button launches our new sign-up walkthrough in preview mode
+    //   (full experience, but nothing is saved or submitted). LeagueApps stays one click away inside it.
+    //   • For real LeagueApps sign-ups now: set registerUrl to the leagueAppsUrl value below.
+    //   • To go fully live with our engine later: set registerUrl to "register.html" (after Supabase + real waiver text).
+    registerUrl:   "register.html?preview=1",
     leagueAppsUrl: "https://cobbfootball.leagueapps.com/clubteams/4572134-2025--rome-junior-wolves-football--cheerleading",
     league:        "Cobb Football League",
     highSchool:  { name: "Rome Wolves Athletics", url: "https://www.romewolvesathletics.com/" },
