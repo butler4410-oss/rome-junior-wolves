@@ -1,23 +1,18 @@
 /* ==========================================================================
-   REGISTRATION ENGINE — CONFIG
+   REGISTRATION ENGINE — CONFIG  (LIVE)
    --------------------------------------------------------------------------
-   Leave these blank to run in LOCAL TEST MODE (the form works end-to-end,
-   saves to your browser, and emails a summary — great for trying it out).
+   Connected to Supabase project "rome-jr-wolves". Sign-ups save to the
+   `registrations` table; any uploaded documents go to the private
+   `registration-docs` bucket.
 
-   To go LIVE with Supabase:
-     1. Create a free project at https://supabase.com
-     2. Run the SQL in  supabase/schema.sql  (Supabase → SQL Editor)
-     3. Create a PRIVATE storage bucket named "registration-docs"
-     4. Paste your Project URL and the anon/public API key below
-        (Supabase → Project Settings → API)
-
-   The anon key is safe to expose: the database is locked down so the public
-   can ONLY submit registrations — never read, edit, or delete them.
-   See REGISTRATION-SETUP.md for full instructions.
+   The anon key below is SAFE to be public: the database has Row Level
+   Security with an insert-only policy, so the public can submit a sign-up
+   but cannot read, edit, or delete anyone's data. View submissions in the
+   Supabase dashboard → Table Editor → registrations.
    ========================================================================== */
 
 window.RJW_CONFIG = {
-  supabaseUrl:     "",                    // e.g. "https://abcdefgh.supabase.co"
-  supabaseAnonKey: "",                    // e.g. "eyJhbGciOi..."
+  supabaseUrl:     "https://jqrgcwyiouzvlypyssql.supabase.co",
+  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impxcmdjd3lpb3V6dmx5cHlzc3FsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4ODU4NDIsImV4cCI6MjA5NzQ2MTg0Mn0.MynGqizki_GgQsnSorcZA2BcUSFo5EWiQs66Ptjiq-g",
   docsBucket:      "registration-docs"
 };

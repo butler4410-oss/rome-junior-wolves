@@ -152,7 +152,7 @@
       season: val("season"), program: val("program"), division: val("division"),
       athlete_first: val("athlete_first"), athlete_last: val("athlete_last"), athlete_dob: val("athlete_dob") || null,
       grade: val("grade"), school: val("school"), gender: val("gender"),
-      returning: val("returning") === "Yes", experience: val("experience"), size: val("size"),
+      returning_player: val("returning") === "Yes", experience: val("experience"), size: val("size"),
       guardian_name: val("guardian_name"), relationship: val("relationship"), email: val("email"), phone: val("phone"),
       address: val("address"), city: val("city"), state: val("state"), zip: val("zip"),
       guardian2_name: val("guardian2_name"), guardian2_phone: val("guardian2_phone"),

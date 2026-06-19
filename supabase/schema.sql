@@ -22,7 +22,7 @@ create table if not exists public.registrations (
   grade         text,
   school        text,
   gender        text,
-  returning     boolean,
+  returning_player boolean,
   experience    text,
   size          text,
 
