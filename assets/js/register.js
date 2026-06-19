@@ -21,7 +21,9 @@
   // Until our engine is approved + Supabase is connected, the wizard stays dormant on the
   // live site (shows a "use current portal" card). On localhost it runs so we can keep building it.
   var isLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
-  if (!supaReady && !isLocal) {
+  var qs = new URLSearchParams(location.search);
+  var isDemo = qs.get("demo") === "1" || qs.get("preview") === "1";  // unlisted preview link for the directors
+  if (!supaReady && !isLocal && !isDemo) {
     var wiz = document.querySelector(".wizard");
     var portal = (D.org && D.org.leagueAppsUrl) || "#";
     if (wiz) {
@@ -191,7 +193,9 @@
     var btn = $("#btnSubmit"); btn.disabled = true; btn.textContent = "Submitting…";
     var p = payload();
     try {
-      if (supaReady) {
+      if (isDemo) {
+        // Preview mode — intentionally do nothing: no database, no email, no saved copy.
+      } else if (supaReady) {
         await submitSupabase(p);
       } else {
         // local test mode: keep a copy + email the program a summary
@@ -210,7 +214,11 @@
     form.hidden = true;
     $("#wizProgress").hidden = true;
     $("#confirm").hidden = false;
-    $("#confirmMsg").textContent = reg.confirmMessage || "Thanks for registering! We'll be in touch soon.";
+    var h2 = $("#confirm h2");
+    if (h2) h2.textContent = isDemo ? "That's the Sign-Up Flow!" : "You're in the Pack!";
+    $("#confirmMsg").textContent = isDemo
+      ? "This was a preview — no information was saved or submitted. This is exactly what families will see when we turn registration on."
+      : (reg.confirmMessage || "Thanks for registering! We'll be in touch soon.");
     window.scrollTo({ top: $("#confirm").getBoundingClientRect().top + window.scrollY - 100, behavior: scrollBehavior() });
   }
   $("#btnAnother").addEventListener("click", function () {
@@ -221,7 +229,12 @@
   });
 
   /* ---------- boot ---------- */
-  if (!supaReady && isLocal) { var mb = $("#modeBanner"); if (mb) mb.hidden = false; }
+  if (isDemo) {
+    var dmb = $("#modeBanner");
+    if (dmb) { var dsp = $("span", dmb); if (dsp) dsp.innerHTML = "<strong>Preview mode</strong> — walk through the full sign-up to see how it works. Nothing you enter is saved or submitted."; dmb.hidden = false; }
+  } else if (!supaReady && isLocal) {
+    var mb = $("#modeBanner"); if (mb) mb.hidden = false;
+  }
   restore();
   show(0);
 })();
