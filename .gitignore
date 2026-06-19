@@ -1,6 +1,2 @@
-# CNAME is held back for now so the github.io preview URL works before DNS is set.
-# When attaching romejrwolves.com: delete this line, then `git add CNAME && git commit && git push`.
-CNAME
-
 .DS_Store
 Thumbs.db
