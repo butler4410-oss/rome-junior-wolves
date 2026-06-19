@@ -60,7 +60,7 @@
         '<div class="wrap">' +
           '<a class="brand" href="index.html" aria-label="' + esc(org.name) + ' home">' +
             '<img src="assets/img/logo-circle.png" alt="' + esc(org.name) + ' logo">' +
-            '<span class="brand-text"><b>Rome Junior</b><span>Wolves · Fear the Pack</span></span>' +
+            '<span class="brand-text"><b>Rome Junior Wolves</b><span>Fear the Pack</span></span>' +
           '</a>' +
           '<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>' +
           '<nav class="nav" id="primaryNav" aria-label="Primary">' + links +
