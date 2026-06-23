@@ -185,7 +185,7 @@
   R.divisions = function (node) {
     node.innerHTML = (D.divisions || []).map(function (dv) {
       return '<div class="card hoverable division-card reveal ' + (dv.type === "cheer" ? "cheer" : "") + '">' +
-        '<div class="ages">' + esc(dv.ages) + "</div>" +
+        '<div class="ages">' + esc(dv.grades) + "</div>" +
         "<h3>" + esc(dv.name) + "</h3>" +
         '<p class="mt-1">' + esc(dv.blurb) + "</p>" +
         '<span class="tag ' + (dv.type === "cheer" ? "gold" : "crimson") + ' mt-2" style="align-self:center">' + (dv.type === "cheer" ? "Cheer" : "Football") + "</span>" +
@@ -239,7 +239,7 @@
       return '<div class="reveal" style="margin-bottom:2.6rem">' +
         '<div class="flex items-center wrap-flex gap" style="justify-content:space-between;margin-bottom:1.1rem">' +
           "<div><h3 style=\"font-size:1.6rem;text-transform:uppercase\">" + esc(t.name) + "</h3>" +
-          '<div style="color:var(--text-soft);font-size:.92rem">' + esc(dv.ages || "") + " · Coach: " + esc(t.coach || "TBA") + "</div></div>" +
+          '<div style="color:var(--text-soft);font-size:.92rem">' + (dv.type === "cheer" ? "Cheer" : "Football") + " · Coach: " + esc(t.coach || "TBA") + "</div></div>" +
           '<span class="tag crimson">' + (dv.type === "cheer" ? "Cheer" : "Football") + "</span>" +
         "</div>" + body + "</div>";
     }).join("");

@@ -57,21 +57,24 @@ window.RJW = {
 
   /* ----- Quick stats shown on the home page -------------------------- */
   stats: [
-    { value: "Ages 5–12", label: "Football & Cheer" },
+    { value: "Grades K–6", label: "Football & Cheer" },
     { value: "Tue · Thu",  label: "Practice Nights" },
     { value: "Rome, GA",   label: "Home of the Pack" },
     { value: "Rome HS",    label: "Official Feeder Program" }
   ],
 
-  /* ----- Divisions / age groups --------------------------------------
-     NOTE: Update these to match your league's exact age/weight divisions
-     for the 2026 season. Ages below are common youth-football brackets. */
+  /* ----- Divisions by grade level ------------------------------------
+     Teams are organized by GRADE for the 2026 season (overlapping pairs
+     for now — adjust the list as your teams firm up). The `grades` value
+     is what shows on the cards. */
   divisions: [
-    { id: "6u",   name: "6U Tiny Wolves",  type: "football", ages: "Ages 5–6",   blurb: "First taste of the game — fundamentals, fun, and teamwork." },
-    { id: "8u",   name: "8U Cubs",         type: "football", ages: "Ages 7–8",   blurb: "Building blocks: stance, technique, and learning to compete." },
-    { id: "10u",  name: "10U Pack",        type: "football", ages: "Ages 9–10",  blurb: "Real schemes, real competition, real growth." },
-    { id: "12u",  name: "12U Wolves",      type: "football", ages: "Ages 11–12", blurb: "Our oldest tackle division — preparing players for middle school ball." },
-    { id: "cheer",name: "Junior Wolves Cheer", type: "cheer", ages: "Ages 5–12", blurb: "Sideline and competition cheer that brings the energy every Friday night." }
+    { id: "k1",   name: "Junior Wolves",       type: "football", grades: "Grades K/1", blurb: "Kindergarten & 1st grade — first steps in the game." },
+    { id: "g12",  name: "Junior Wolves",       type: "football", grades: "Grades 1/2", blurb: "1st & 2nd grade — fundamentals, fun, and teamwork." },
+    { id: "g23",  name: "Junior Wolves",       type: "football", grades: "Grades 2/3", blurb: "2nd & 3rd grade — building technique and toughness." },
+    { id: "g34",  name: "Junior Wolves",       type: "football", grades: "Grades 3/4", blurb: "3rd & 4th grade — real schemes and real competition." },
+    { id: "g45",  name: "Junior Wolves",       type: "football", grades: "Grades 4/5", blurb: "4th & 5th grade — sharpening skills and football IQ." },
+    { id: "g56",  name: "Junior Wolves",       type: "football", grades: "Grades 5/6", blurb: "5th & 6th grade — preparing for middle school ball." },
+    { id: "cheer",name: "Junior Wolves Cheer", type: "cheer",    grades: "All Grades",  blurb: "Sideline & competition cheer — open to all grade levels." }
   ],
 
   /* ----- Registration fees (UPDATE with your real pricing) ----------- */
@@ -204,11 +207,13 @@ window.RJW = {
      replace them with your real roster (or clear the array to show
      "roster coming soon"). */
   teams: [
-    { divisionId: "6u",   name: "6U Tiny Wolves",      coach: "TBA", roster: [] },
-    { divisionId: "8u",   name: "8U Cubs",             coach: "TBA", roster: [] },
-    { divisionId: "10u",  name: "10U Pack",            coach: "TBA", roster: [] },
-    { divisionId: "12u",  name: "12U Wolves",          coach: "TBA", roster: [] },
-    { divisionId: "cheer",name: "Junior Wolves Cheer", coach: "TBA", roster: [] }
+    { divisionId: "k1",   name: "Grades K/1",       coach: "TBA", roster: [] },
+    { divisionId: "g12",  name: "Grades 1/2",       coach: "TBA", roster: [] },
+    { divisionId: "g23",  name: "Grades 2/3",       coach: "TBA", roster: [] },
+    { divisionId: "g34",  name: "Grades 3/4",       coach: "TBA", roster: [] },
+    { divisionId: "g45",  name: "Grades 4/5",       coach: "TBA", roster: [] },
+    { divisionId: "g56",  name: "Grades 5/6",       coach: "TBA", roster: [] },
+    { divisionId: "cheer",name: "Cheer — All Grades", coach: "TBA", roster: [] }
     /* To publish a roster, fill its array, e.g.:
        roster: [ { number: "7", name: "First Last", position: "QB / DB", grade: "4th" } ] */
   ],
@@ -238,7 +243,7 @@ window.RJW = {
 
   /* ----- FAQ ---------------------------------------------------------- */
   faqs: [
-    { q: "What ages can play?", a: "We field youth football divisions for roughly ages 5–12 and a cheer program for the same age range. Confirm your child's exact division at registration." },
+    { q: "What grades can play?", a: "We field youth football teams by grade level (Kindergarten through 6th grade), plus a cheer program open to all grades. Your athlete's team is set by their grade." },
     { q: "When and where are practices?", a: "Offseason training is Tuesdays & Thursdays, 6:00–7:00 PM at 406 Riverside Pkwy NE, Rome, GA. Regular-season practice schedules are shared with registered families before the fall season." },
     { q: "How do I register?", a: "Click any \"Register\" button on this site to go to our Cobb Football League portal. You'll need your child's birth certificate and a few minutes to complete the forms." },
     { q: "What equipment do we need?", a: "Football players need cleats and a water bottle to start; the program coordinates helmets and pads. Cheer athletes receive uniform details after signing up. We'll send fitting and hand-out dates by email." },

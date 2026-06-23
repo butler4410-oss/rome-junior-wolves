@@ -62,7 +62,7 @@
     var list = (D.divisions || []).filter(function (d) { return prog ? d.type === type : true; });
     var cur = sel.value;
     sel.innerHTML = '<option value="">Select a division…</option>' +
-      list.map(function (d) { return '<option value="' + d.name + '">' + d.name + " · " + d.ages + "</option>"; }).join("");
+      list.map(function (d) { return '<option value="' + d.grades + '">' + d.grades + "</option>"; }).join("");
     if (cur) { sel.value = cur; if (sel.value !== cur) sel.value = ""; }
   }
   $all('input[name=program]').forEach(function (r) { r.addEventListener("change", populateDivisions); });
