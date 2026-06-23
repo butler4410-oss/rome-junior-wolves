@@ -138,7 +138,7 @@ p { color: var(--text); }
   transition: opacity .3s; opacity: 1;
 }
 .site-header.solid::before { opacity: 0; }
-.site-header.solid { background: rgba(20,11,13,.92); backdrop-filter: blur(10px); box-shadow: 0 6px 24px rgba(0,0,0,.28); }
+.site-header.solid { background: rgba(20,11,13,.95); box-shadow: 0 6px 24px rgba(0,0,0,.28); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; max-width: 1360px; }
 .brand { display: flex; align-items: center; gap: .85rem; }
 .brand img { width: 72px; height: 72px; filter: drop-shadow(0 4px 10px rgba(0,0,0,.55)); }
