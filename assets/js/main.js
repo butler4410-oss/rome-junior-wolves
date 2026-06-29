@@ -30,19 +30,20 @@
 
   /* ---------- nav config ---------- */
   var NAV = [
-    { href: "index.html",    label: "Home" },
-    { href: "programs.html", label: "Programs" },
-    { href: "teams.html",    label: "Teams" },
-    { href: "schedule.html", label: "Schedule" },
-    { href: "news.html",     label: "News" },
-    { href: "gallery.html",  label: "Gallery" },
-    { href: "sponsors.html", label: "Sponsors" },
-    { href: "about.html",    label: "About" },
-    { href: "contact.html",  label: "Contact" }
+    { href: "/",          label: "Home" },
+    { href: "/programs/", label: "Programs" },
+    { href: "/teams/",    label: "Teams" },
+    { href: "/schedule/", label: "Schedule" },
+    { href: "/news/",     label: "News" },
+    { href: "/gallery/",  label: "Gallery" },
+    { href: "/sponsors/", label: "Sponsors" },
+    { href: "/about/",    label: "About" },
+    { href: "/contact/",  label: "Contact" }
   ];
   function currentPage() {
-    var f = location.pathname.split("/").pop();
-    return (!f || f === "") ? "index.html" : f;
+    var p = location.pathname.replace(/index\.html$/, "");
+    if (p.charAt(p.length - 1) !== "/") p += "/";
+    return p;
   }
   function isExternal(u) { return /^https?:/i.test(u); }
   function regAttrs() { return isExternal(org.registerUrl) ? ' target="_blank" rel="noopener"' : ""; }
@@ -58,8 +59,8 @@
       '<a href="#main" class="skip-link">Skip to content</a>' +
       '<header class="site-header" id="siteHeader">' +
         '<div class="wrap">' +
-          '<a class="brand" href="index.html" aria-label="' + esc(org.name) + ' home">' +
-            '<img src="assets/img/logo-circle.png" alt="' + esc(org.name) + ' logo">' +
+          '<a class="brand" href="/" aria-label="' + esc(org.name) + ' home">' +
+            '<img src="/assets/img/logo-circle.png" alt="' + esc(org.name) + ' logo">' +
             '<span class="brand-text"><b>Rome Junior Wolves</b><span>Fear the Pack</span></span>' +
           '</a>' +
           '<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>' +
@@ -100,15 +101,15 @@
         '<div class="wrap">' +
           '<div class="footer-top">' +
             '<div class="footer-brand">' +
-              '<img src="assets/img/logo-circle.png" alt="' + esc(org.name) + '">' +
+              '<img src="/assets/img/logo-circle.png" alt="' + esc(org.name) + '">' +
               "<p>" + esc(org.blurb) + "</p>" +
               '<div class="social-row">' + social + "</div>" +
             "</div>" +
             '<div class="footer-col"><h4>Explore</h4>' + quick + "</div>" +
             '<div class="footer-col"><h4>Get Involved</h4>' +
               '<a href="' + esc(org.registerUrl) + '"' + regAttrs() + '>Register Now</a>' +
-              '<a href="sponsors.html">Become a Sponsor</a>' +
-              '<a href="contact.html">Volunteer / Coach</a>' +
+              '<a href="/sponsors/">Become a Sponsor</a>' +
+              '<a href="/contact/">Volunteer / Coach</a>' +
               '<a href="' + esc(org.highSchool.url) + '" target="_blank" rel="noopener">Rome Wolves Athletics</a>' +
             "</div>" +
             '<div class="footer-col"><h4>Find the Pack</h4>' +

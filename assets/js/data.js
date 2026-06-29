@@ -33,7 +33,7 @@ window.RJW = {
     // 2026 team rosters are set. "Camps & Training" CTAs open the live sign-up wizard
     //   (register.html), used for camps & offseason training. ?preview=1 = walkthrough that submits nothing.
     ctaLabel:      "Camps & Training",
-    registerUrl:   "register.html",
+    registerUrl:   "/register/",
     leagueAppsUrl: "https://cobbfootball.leagueapps.com/clubteams/4572134-2025--rome-junior-wolves-football--cheerleading",
     league:        "Cobb Football League",
     highSchool:  { name: "Rome Wolves Athletics", url: "https://www.romewolvesathletics.com/" },
@@ -237,7 +237,7 @@ window.RJW = {
   /* ----- Photo gallery -----------------------------------------------
      Drop images into assets/img/gallery/ and list them here. */
   gallery: [
-    { src: "assets/img/hero.jpg", caption: "Friday night — the Pack takes the field" }
+    { src: "/assets/img/hero.jpg", caption: "Friday night — the Pack takes the field" }
     // Add more: { src: "assets/img/gallery/your-photo.jpg", caption: "Game day" }
   ],
 

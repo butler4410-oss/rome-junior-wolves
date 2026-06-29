@@ -34,7 +34,7 @@
         '<p class="lead mt-1" style="margin-inline:auto;max-width:46ch">We\'re putting the finishing touches on our new sign-up. For now, register through our current portal — it only takes a few minutes.</p>' +
         '<div class="hero-cta center-x" style="justify-content:center;margin-top:2rem">' +
           '<a class="btn btn-gold btn-lg" href="' + portal + '" target="_blank" rel="noopener">Register Now</a>' +
-          '<a class="btn btn-outline" href="index.html">Back to Home</a>' +
+          '<a class="btn btn-outline" href="/">Back to Home</a>' +
         '</div></div></div>';
     }
     return;
