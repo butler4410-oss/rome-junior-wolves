@@ -247,7 +247,7 @@ window.RJW = {
     { q: "When and where are practices?", a: "Offseason training is Tuesdays & Thursdays, 6:00–7:00 PM at 406 Riverside Pkwy NE, Rome, GA. Regular-season practice schedules are shared with registered families before the fall season." },
     { q: "How do I register?", a: "Click any \"Register\" button on this site to go to our Cobb Football League portal. You'll need your child's birth certificate and a few minutes to complete the forms." },
     { q: "What equipment do we need?", a: "Football players need cleats and a water bottle to start; the program coordinates helmets and pads. Cheer athletes receive uniform details after signing up. We'll send fitting and hand-out dates by email." },
-    { q: "Are you connected to Rome High School?", a: "Yes. The Junior Wolves are the youth feeder program for the Rome High School and Rome Middle School Wolves — same wolf, same crimson and gold, same tradition." },
+    { q: "Are you connected to Rome High School?", a: "Yes. The Junior Wolves are the youth feeder program for the Rome High School and Rome Middle School Wolves — same wolf, same red and gold, same tradition." },
     { q: "How can I help or sponsor the team?", a: "We're a community-powered program. Email us about coaching, volunteering, or sponsoring a team — see the Sponsors and Contact pages." }
   ]
 };

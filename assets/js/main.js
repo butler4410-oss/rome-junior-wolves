@@ -188,7 +188,7 @@
         '<div class="ages">' + esc(dv.grades) + "</div>" +
         "<h3>" + esc(dv.name) + "</h3>" +
         '<p class="mt-1">' + esc(dv.blurb) + "</p>" +
-        '<span class="tag ' + (dv.type === "cheer" ? "gold" : "crimson") + ' mt-2" style="align-self:center">' + (dv.type === "cheer" ? "Cheer" : "Football") + "</span>" +
+        '<span class="tag ' + (dv.type === "cheer" ? "gold" : "red") + ' mt-2" style="align-self:center">' + (dv.type === "cheer" ? "Cheer" : "Football") + "</span>" +
         "</div>";
     }).join("");
   };
@@ -206,7 +206,7 @@
         "</div></div>" +
         '<div class="card"><span class="card-top"></span><div class="card-body">' +
           "<h3>What's Included</h3><ul class=\"mt-1\">" +
-          (f.includes || []).map(function (i) { return '<li style="padding:.45rem 0;display:flex;gap:.6rem"><span class="text-crimson">&#10003;</span>' + esc(i) + "</li>"; }).join("") +
+          (f.includes || []).map(function (i) { return '<li style="padding:.45rem 0;display:flex;gap:.6rem"><span class="text-red">&#10003;</span>' + esc(i) + "</li>"; }).join("") +
           "</ul></div></div>" +
       "</div>";
   };
@@ -240,7 +240,7 @@
         '<div class="flex items-center wrap-flex gap" style="justify-content:space-between;margin-bottom:1.1rem">' +
           "<div><h3 style=\"font-size:1.6rem;text-transform:uppercase\">" + esc(t.name) + "</h3>" +
           '<div style="color:var(--text-soft);font-size:.92rem">' + (dv.type === "cheer" ? "Cheer" : "Football") + " · Coach: " + esc(t.coach || "TBA") + "</div></div>" +
-          '<span class="tag crimson">' + (dv.type === "cheer" ? "Cheer" : "Football") + "</span>" +
+          '<span class="tag red">' + (dv.type === "cheer" ? "Cheer" : "Football") + "</span>" +
         "</div>" + body + "</div>";
     }).join("");
     node.innerHTML = html || '<p class="lead">Teams are posted here once divisions are set for the season.</p>';
@@ -297,7 +297,7 @@
     if (!D.scheduleReleased) {
       node.innerHTML = '<div class="card"><div class="card-body center" style="padding:3rem 1.5rem">' +
         '<h3 style="font-size:1.5rem">Fall 2026 Schedule — Coming Soon</h3>' +
-        '<p class="lead mt-1" style="margin-inline:auto">The league releases game schedules closer to kickoff. As soon as ours is set, every game will appear right here. In the meantime, see <a class="text-crimson" href="schedule.html#events">key dates &amp; events</a> below.</p>' +
+        '<p class="lead mt-1" style="margin-inline:auto">The league releases game schedules closer to kickoff. As soon as ours is set, every game will appear right here. In the meantime, see <a class="text-red" href="schedule.html#events">key dates &amp; events</a> below.</p>' +
         '<a class="btn btn-outline mt-3" data-fb href="#">Follow on Facebook for updates</a>' +
       "</div></div>";
       fillBindings();
@@ -317,7 +317,7 @@
     node.innerHTML =
       '<div class="grid cols-3">' +
       [["Days", p.days], ["Time", p.time], ["Where", p.location]].map(function (r) {
-        return '<div class="card feature reveal"><div class="role text-crimson" style="font-family:var(--f-head);text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;font-weight:600">' + esc(r[0]) + '</div><div style="font-family:var(--f-head);font-weight:600;font-size:1.25rem;margin-top:.3rem">' + esc(r[1]) + "</div></div>";
+        return '<div class="card feature reveal"><div class="role text-red" style="font-family:var(--f-head);text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;font-weight:600">' + esc(r[0]) + '</div><div style="font-family:var(--f-head);font-weight:600;font-size:1.25rem;margin-top:.3rem">' + esc(r[1]) + "</div></div>";
       }).join("") + "</div>" +
       (p.note ? '<div class="notice mt-3">' + ICON_INFO + "<div>" + esc(p.note) + "</div></div>" : "");
   };
