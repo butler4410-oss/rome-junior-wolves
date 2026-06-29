@@ -116,6 +116,18 @@ window.RJW = {
      "Registration", "Announcement". Dates are YYYY-MM-DD. */
   news: [
     {
+      date: "2026-07-01",
+      category: "Announcement",
+      title: "No training this week — Happy 4th of July!",
+      body: "Hey Wolfpack! Just a reminder that there's no training this week. Enjoy the break and have a safe, happy 4th of July weekend — we'll see everyone back and ready to work next week!"
+    },
+    {
+      date: "2026-06-25",
+      category: "Event",
+      title: "Cheer Camp — Cheer Loud, Dance Proud!",
+      body: "Attention all families in Rome & Floyd County! Our \"Cheer Loud, Dance Proud\" Cheer Camp runs July 13–16, 10 AM–2 PM at Kingdom Church International (5415 Calhoun Rd NE, Adairsville, GA). For grades 1st–5th — high-energy routines, dance, jumps, and stunts (beginner to intermediate), all focused on empowering young girls: building character, confidence, and new friendships. $100 includes daily lunch and an official Cheer Camp t-shirt. To register, email romejuniorwolves@gmail.com or message us on Facebook."
+    },
+    {
       date: "2026-06-18",
       category: "Practice",
       title: "Training update for the Wolf Pack",
@@ -157,6 +169,14 @@ window.RJW = {
      status is auto-calculated from the date, but you can pin one as
      featured:true to highlight it on the home page. */
   events: [
+    {
+      date: "2026-07-13",
+      title: "Cheer Camp — Cheer Loud, Dance Proud",
+      time: "10:00 AM – 2:00 PM · July 13–16",
+      location: "Kingdom Church International · 5415 Calhoun Rd NE, Adairsville, GA",
+      blurb: "Four days of high-energy cheer for grades 1–5 — routines, dance, jumps & stunts (beginner to intermediate). $100 includes daily lunch and an official Cheer Camp t-shirt. Email romejuniorwolves@gmail.com to register.",
+      featured: true
+    },
     {
       date: "2026-08-01",
       title: "Fall Season Practice Begins",
