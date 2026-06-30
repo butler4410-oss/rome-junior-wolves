@@ -158,7 +158,11 @@
     var limit = +node.getAttribute("data-limit") || (D.news || []).length;
     var items = (D.news || []).slice(0, limit);
     node.innerHTML = items.map(function (n) {
-      return '<article class="card hoverable news-card reveal"><span class="card-top"></span>' +
+      var media = n.image
+        ? '<a class="news-media" href="' + esc(n.image) + '" target="_blank" rel="noopener" aria-label="View the ' + esc(n.title) + ' flyer"><img src="' + esc(n.image) + '" alt="' + esc(n.title) + ' flyer" loading="lazy"></a>'
+        : "";
+      return '<article class="card hoverable news-card reveal' + (n.image ? " has-media" : "") + '"><span class="card-top"></span>' +
+        media +
         '<div class="card-body">' +
           '<div class="meta"><span class="tag">' + esc(n.category) + '</span><span class="news-date">' + fmtLong(n.date) + "</span></div>" +
           "<h3>" + esc(n.title) + "</h3>" +
@@ -262,12 +266,10 @@
   };
 
   R.sponsors = function (node) {
-    var tiers = { champion: "Champion Sponsor", varsity: "Varsity Sponsor", community: "Community Sponsor" };
     node.innerHTML = (D.sponsors || []).map(function (s) {
       var inner = (s.logo ? '<img src="' + esc(s.logo) + '" alt="' + esc(s.name) + '" style="max-height:70px">' : '<div class="s-name">' + esc(s.name) + "</div>") +
-        (s.note ? '<div class="s-note">' + esc(s.note) + "</div>" : "") +
-        '<div class="tier-label mt-1">' + esc(tiers[s.tier] || "") + "</div>";
-      var cls = "sponsor reveal " + (s.tier === "champion" ? "champion " : "") + (s.placeholder ? "placeholder" : "");
+        (s.note ? '<div class="s-note">' + esc(s.note) + "</div>" : "");
+      var cls = "sponsor reveal " + (s.placeholder ? "placeholder" : "");
       return s.url && !s.placeholder
         ? '<a class="' + cls + '" href="' + esc(s.url) + '" target="_blank" rel="noopener">' + inner + "</a>"
         : '<div class="' + cls + '">' + inner + "</div>";

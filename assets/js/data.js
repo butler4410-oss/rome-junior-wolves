@@ -124,6 +124,7 @@ window.RJW = {
     {
       date: "2026-06-25",
       category: "Event",
+      image: "/assets/img/cheer-camp-2026.png",
       title: "Cheer Camp — Cheer Loud, Dance Proud!",
       body: "Attention all families in Rome & Floyd County! Our \"Cheer Loud, Dance Proud\" Cheer Camp runs July 13–16, 10 AM–2 PM at Kingdom Church International (5415 Calhoun Rd NE, Adairsville, GA). For grades 1st–5th — high-energy routines, dance, jumps, and stunts (beginner to intermediate), all focused on empowering young girls: building character, confidence, and new friendships. $100 includes daily lunch and an official Cheer Camp t-shirt. To register, email romejuniorwolves@gmail.com or message us on Facebook."
     },
@@ -138,12 +139,6 @@ window.RJW = {
       category: "Practice",
       title: "Hey Wolf Pack — back on the field!",
       body: "We're very excited to get back on the field today. Bring water, cleats, and energy. Offseason training runs Tuesdays & Thursdays from 6:00–7:00 PM through the summer. Let's get to work."
-    },
-    {
-      date: "2026-05-28",
-      category: "Fundraiser",
-      title: "Wolfpack Spirit Night at Shane's Rib Shack",
-      body: "Thank you to everyone who packed the house at Shane's Rib Shack to support our Junior Wolves! A percentage of every order came back to the program. We couldn't do this without our community."
     },
     {
       date: "2026-05-21",
@@ -199,13 +194,6 @@ window.RJW = {
       time: "See flyer",
       location: "Rome, GA",
       blurb: "Camp with Rome High School Head Coach Bill Stewart and the Rome Wolves staff."
-    },
-    {
-      date: "2026-05-28",
-      title: "Spirit Night — Shane's Rib Shack",
-      time: "4:00 – 9:00 PM",
-      location: "315 Riverside Pkwy, Rome, GA",
-      blurb: "Dine-out fundraiser. A percentage of proceeds supports the program."
     }
   ],
 
@@ -248,7 +236,6 @@ window.RJW = {
      assets/img/sponsors/ and reference it, or leave logo "" for a
      text card. */
   sponsors: [
-    { name: "Shane's Rib Shack", tier: "champion", url: "", logo: "", note: "Proud Spirit Night partner" },
     { name: "Your Business Here", tier: "varsity", url: "", logo: "", note: "Become a sponsor", placeholder: true },
     { name: "Your Business Here", tier: "community", url: "", logo: "", note: "Become a sponsor", placeholder: true },
     { name: "Your Business Here", tier: "community", url: "", logo: "", note: "Become a sponsor", placeholder: true }
