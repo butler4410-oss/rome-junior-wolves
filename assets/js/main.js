@@ -121,6 +121,7 @@
           '<div class="footer-bottom">' +
             "<span>&copy; <span id=\"yr\"></span> " + esc(org.name) + ". Fear the Pack.</span>" +
             "<span>Proud youth feeder for the " + esc(org.highSchool.name) + ".</span>" +
+            '<span class="site-credit">Site by <a href="https://butleranalytics.io" target="_blank" rel="noopener">Butler Performance</a></span>' +
           "</div>" +
         "</div>" +
       "</footer>";
