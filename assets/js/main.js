@@ -300,7 +300,7 @@
     if (!D.scheduleReleased) {
       node.innerHTML = '<div class="card"><div class="card-body center" style="padding:3rem 1.5rem">' +
         '<h3 style="font-size:1.5rem">Fall 2026 Schedule — Coming Soon</h3>' +
-        '<p class="lead mt-1" style="margin-inline:auto">The league releases game schedules closer to kickoff. As soon as ours is set, every game will appear right here. In the meantime, see <a class="text-red" href="schedule.html#events">key dates &amp; events</a> below.</p>' +
+        '<p class="lead mt-1" style="margin-inline:auto">Games are played on <strong>Saturdays</strong>. The league releases the full schedule closer to kickoff — as soon as ours is set, every game will appear right here. In the meantime, see <a class="text-red" href="#events">key dates &amp; events</a> below.</p>' +
         '<a class="btn btn-outline mt-3" data-fb href="#">Follow on Facebook for updates</a>' +
       "</div></div>";
       fillBindings();

@@ -39,26 +39,26 @@ window.RJW = {
     highSchool:  { name: "Rome Wolves Athletics", url: "https://www.romewolvesathletics.com/" },
     feeders:     ["Rome High School", "Rome Middle School"],
     field: {
-      name:    "Junior Wolves Practice Field",
-      address: "406 Riverside Pkwy NE, Rome, GA 30161",
-      mapUrl:  "https://www.google.com/maps/search/?api=1&query=406+Riverside+Pkwy+NE+Rome+GA+30161"
+      name:    "Old Rome Middle School",
+      address: "1000 Veterans Memorial Hwy NE, Rome, GA 30161",
+      mapUrl:  "https://www.google.com/maps/search/?api=1&query=1000+Veterans+Memorial+Hwy+NE+Rome+GA+30161"
     }
   },
 
   /* ----- Practice / training info ------------------------------------ */
   practice: {
-    headline: "Offseason Training",
+    headline: "Practice",
     window:   "March – August",
-    days:     "Tuesdays & Thursdays",
+    days:     "Mondays, Tuesdays & Thursdays",
     time:     "6:00 PM – 7:00 PM",
-    location: "406 Riverside Pkwy NE, Rome, GA 30161",
+    location: "Old Rome Middle School · 1000 Veterans Memorial Hwy NE, Rome, GA",
     note:     "Offseason training runs through the summer. Regular-season practices ramp up before the fall season — watch the News page and our Facebook for the latest."
   },
 
   /* ----- Quick stats shown on the home page -------------------------- */
   stats: [
-    { value: "Grades K–6", label: "Football & Cheer" },
-    { value: "Tue · Thu",  label: "Practice Nights" },
+    { value: "Grades 1–5", label: "Football & Cheer" },
+    { value: "Mon · Tue · Thu",  label: "Practice Nights" },
     { value: "Rome, GA",   label: "Home of the Pack" },
     { value: "Rome HS",    label: "Official Feeder Program" }
   ],
@@ -68,13 +68,11 @@ window.RJW = {
      for now — adjust the list as your teams firm up). The `grades` value
      is what shows on the cards. */
   divisions: [
-    { id: "k1",   name: "Junior Wolves",       type: "football", grades: "Grades K/1", blurb: "Kindergarten & 1st grade — first steps in the game." },
     { id: "g12",  name: "Junior Wolves",       type: "football", grades: "Grades 1/2", blurb: "1st & 2nd grade — fundamentals, fun, and teamwork." },
     { id: "g23",  name: "Junior Wolves",       type: "football", grades: "Grades 2/3", blurb: "2nd & 3rd grade — building technique and toughness." },
     { id: "g34",  name: "Junior Wolves",       type: "football", grades: "Grades 3/4", blurb: "3rd & 4th grade — real schemes and real competition." },
     { id: "g45",  name: "Junior Wolves",       type: "football", grades: "Grades 4/5", blurb: "4th & 5th grade — sharpening skills and football IQ." },
-    { id: "g56",  name: "Junior Wolves",       type: "football", grades: "Grades 5/6", blurb: "5th & 6th grade — preparing for middle school ball." },
-    { id: "cheer",name: "Junior Wolves Cheer", type: "cheer",    grades: "All Grades",  blurb: "Sideline & competition cheer — open to all grade levels." }
+    { id: "cheer",name: "Junior Wolves Cheer", type: "cheer",    grades: "Grades 1st–5th", blurb: "Sideline & competition cheer for grades 1st–5th." }
   ],
 
   /* ----- Registration fees (UPDATE with your real pricing) ----------- */
@@ -105,7 +103,7 @@ window.RJW = {
   registration: {
     payLater: true,           // we collect info now and arrange payment separately
     sizes: ["Youth S", "Youth M", "Youth L", "Youth XL", "Adult S", "Adult M", "Adult L"],
-    grades: ["Pre-K", "K", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"],
+    grades: ["1st", "2nd", "3rd", "4th", "5th"],
     requireBirthCertificate: false,  // upload is optional; families may bring a copy in person
     confirmMessage: "Your athlete's spot is reserved. A board member will follow up by email with payment details and next steps. Welcome to the Pack!",
     feeNote: "Registration fees are confirmed after sign-up. We'll email payment options — and we never want cost to keep a kid off the field, so just ask about multi-child discounts or assistance."
@@ -132,13 +130,13 @@ window.RJW = {
       date: "2026-06-18",
       category: "Practice",
       title: "Training update for the Wolf Pack",
-      body: "Training was canceled today — see you all next Tuesday. Offseason training continues Tuesdays & Thursdays, 6:00–7:00 PM at the practice field. Watch here and Facebook for weather and schedule changes."
+      body: "Training was canceled today — see you all next Tuesday. Offseason training continues Mondays, Tuesdays & Thursdays, 6:00–7:00 PM at Old Rome Middle School. Watch here and Facebook for weather and schedule changes."
     },
     {
       date: "2026-06-02",
       category: "Practice",
       title: "Hey Wolf Pack — back on the field!",
-      body: "We're very excited to get back on the field today. Bring water, cleats, and energy. Offseason training runs Tuesdays & Thursdays from 6:00–7:00 PM through the summer. Let's get to work."
+      body: "We're very excited to get back on the field today. Bring water, cleats, and energy. Offseason training runs Mondays, Tuesdays & Thursdays from 6:00–7:00 PM through the summer. Let's get to work."
     },
     {
       date: "2026-05-21",
@@ -156,7 +154,7 @@ window.RJW = {
       date: "2026-03-10",
       category: "Announcement",
       title: "2026 rosters are set — camps & training continue",
-      body: "Our 2026 teams are locked in. Didn't grab a roster spot this year? You can still get in the game: offseason training runs Tuesdays & Thursdays, and we host youth camps through the season. Email us or follow on Facebook to join."
+      body: "Our 2026 teams are locked in. Didn't grab a roster spot this year? You can still get in the game: offseason training runs Mondays, Tuesdays & Thursdays, and we host youth camps through the season. Email us or follow on Facebook to join."
     }
   ],
 
@@ -176,7 +174,7 @@ window.RJW = {
       date: "2026-08-01",
       title: "Fall Season Practice Begins",
       time: "TBA",
-      location: "Junior Wolves Practice Field",
+      location: "Old Rome Middle School · 1000 Veterans Memorial Hwy NE, Rome, GA",
       blurb: "Regular-season practices ramp up. Exact dates and times announced to registered families.",
       featured: true
     },
@@ -215,13 +213,11 @@ window.RJW = {
      replace them with your real roster (or clear the array to show
      "roster coming soon"). */
   teams: [
-    { divisionId: "k1",   name: "Grades K/1",       coach: "TBA", roster: [] },
     { divisionId: "g12",  name: "Grades 1/2",       coach: "TBA", roster: [] },
     { divisionId: "g23",  name: "Grades 2/3",       coach: "TBA", roster: [] },
     { divisionId: "g34",  name: "Grades 3/4",       coach: "TBA", roster: [] },
     { divisionId: "g45",  name: "Grades 4/5",       coach: "TBA", roster: [] },
-    { divisionId: "g56",  name: "Grades 5/6",       coach: "TBA", roster: [] },
-    { divisionId: "cheer",name: "Cheer — All Grades", coach: "TBA", roster: [] }
+    { divisionId: "cheer",name: "Cheer — Grades 1st–5th", coach: "TBA", roster: [] }
     /* To publish a roster, fill its array, e.g.:
        roster: [ { number: "7", name: "First Last", position: "QB / DB", grade: "4th" } ] */
   ],
@@ -244,14 +240,15 @@ window.RJW = {
   /* ----- Photo gallery -----------------------------------------------
      Drop images into assets/img/gallery/ and list them here. */
   gallery: [
-    { src: "/assets/img/hero.jpg", caption: "Friday night — the Pack takes the field" }
+    { src: "/assets/img/hero.jpg", caption: "Game day — the Pack takes the field" }
     // Add more: { src: "assets/img/gallery/your-photo.jpg", caption: "Game day" }
   ],
 
   /* ----- FAQ ---------------------------------------------------------- */
   faqs: [
-    { q: "What grades can play?", a: "We field youth football teams by grade level (Kindergarten through 6th grade), plus a cheer program open to all grades. Your athlete's team is set by their grade." },
-    { q: "When and where are practices?", a: "Offseason training is Tuesdays & Thursdays, 6:00–7:00 PM at 406 Riverside Pkwy NE, Rome, GA. Regular-season practice schedules are shared with registered families before the fall season." },
+    { q: "What grades can play?", a: "We field youth football teams by grade level (grades 1st–5th), plus a cheer program for grades 1st–5th. Your athlete's team is set by their grade." },
+    { q: "When and where are practices?", a: "Practice is Mondays, Tuesdays & Thursdays, 6:00–7:00 PM at Old Rome Middle School (1000 Veterans Memorial Hwy NE, Rome, GA). Regular-season practice schedules are shared with registered families before the fall season." },
+    { q: "When are games played?", a: "Games are played on Saturdays during the fall season. The full game schedule is released closer to kickoff — watch the Schedule page and our Facebook for updates." },
     { q: "How do I register?", a: "Click any \"Register\" button on this site to go to our Cobb Football League portal. You'll need your child's birth certificate and a few minutes to complete the forms." },
     { q: "What equipment do we need?", a: "Football players need cleats and a water bottle to start; the program coordinates helmets and pads. Cheer athletes receive uniform details after signing up. We'll send fitting and hand-out dates by email." },
     { q: "Are you connected to Rome High School?", a: "Yes. The Junior Wolves are the youth feeder program for the Rome High School and Rome Middle School Wolves — same wolf, same red and gold, same tradition." },
