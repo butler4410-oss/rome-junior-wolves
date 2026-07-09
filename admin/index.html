@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Rome Junior Wolves</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#9E1B32">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Loading / fatal -->
+  <div id="adminBoot" class="admin-center"><div class="admin-spinner"></div><p>Loading admin…</p></div>
+
+  <!-- LOGIN -->
+  <div id="adminLogin" class="admin-center" hidden>
+    <form id="loginForm" class="admin-login-card">
+      <img src="/assets/img/logo-circle.png" alt="Rome Junior Wolves" class="admin-login-logo">
+      <h1>Team Admin</h1>
+      <p class="admin-muted">Board members only. Sign in to manage the site.</p>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="username" required>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <button class="btn btn-primary btn-lg" type="submit" id="loginBtn">Sign In</button>
+      <p id="loginMsg" class="admin-err" role="alert" hidden></p>
+      <a href="/" class="admin-muted admin-back">&larr; Back to the website</a>
+    </form>
+  </div>
+
+  <!-- APP -->
+  <div id="adminApp" hidden>
+    <header class="admin-topbar">
+      <div class="admin-brand"><img src="/assets/img/logo-circle.png" alt=""><span>Junior Wolves <b>Admin</b></span></div>
+      <div class="admin-user"><a href="/" target="_blank" rel="noopener" class="admin-muted">View site &#8599;</a><span id="whoami" class="admin-muted"></span><button id="logoutBtn" class="btn btn-outline btn-sm">Log out</button></div>
+    </header>
+    <nav class="admin-tabs" id="adminTabs"></nav>
+    <main class="admin-main">
+      <div class="admin-head">
+        <div><h2 id="collTitle"></h2><p id="collHint" class="admin-muted"></p></div>
+        <button id="addBtn" class="btn btn-primary">+ Add new</button>
+      </div>
+      <div id="collList" class="admin-list"></div>
+    </main>
+  </div>
+
+  <!-- FORM PANEL -->
+  <div id="adminForm" class="admin-form-backdrop" hidden>
+    <div class="admin-form-panel" role="dialog" aria-modal="true" aria-label="Edit item">
+      <div class="admin-form-head"><h3 id="formTitle">Edit</h3><button id="formClose" class="admin-x" aria-label="Close">&times;</button></div>
+      <form id="itemForm" class="admin-form-body"></form>
+      <div class="admin-form-foot">
+        <button id="deleteBtn" class="btn btn-ghost-danger" type="button" hidden>Delete</button>
+        <span style="flex:1"></span>
+        <button id="cancelBtn" class="btn btn-outline" type="button">Cancel</button>
+        <button id="saveBtn" class="btn btn-primary" type="button">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="admin-toast" hidden></div>
+
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/data.js"></script>
+  <script src="/assets/js/admin.js"></script>
+</body>
+</html>

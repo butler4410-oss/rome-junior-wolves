@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /register/
 
 Sitemap: https://romejrwolves.com/sitemap.xml
