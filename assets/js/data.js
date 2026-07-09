@@ -50,7 +50,7 @@ window.RJW = {
     headline: "Practice",
     window:   "March – August",
     days:     "Mondays, Tuesdays & Thursdays",
-    time:     "6:00 PM – 7:00 PM",
+    time:     "6:00 PM – 8:00 PM",
     location: "Old Rome Middle School · 1000 Veterans Memorial Hwy NE, Rome, GA",
     note:     "Offseason training runs through the summer. Regular-season practices ramp up before the fall season — watch the News page and our Facebook for the latest."
   },
@@ -130,13 +130,13 @@ window.RJW = {
       date: "2026-06-18",
       category: "Practice",
       title: "Training update for the Wolf Pack",
-      body: "Training was canceled today — see you all next Tuesday. Offseason training continues Mondays, Tuesdays & Thursdays, 6:00–7:00 PM at Old Rome Middle School. Watch here and Facebook for weather and schedule changes."
+      body: "Training was canceled today — see you all next Tuesday. Offseason training continues Mondays, Tuesdays & Thursdays, 6:00–8:00 PM at Old Rome Middle School. Watch here and Facebook for weather and schedule changes."
     },
     {
       date: "2026-06-02",
       category: "Practice",
       title: "Hey Wolf Pack — back on the field!",
-      body: "We're very excited to get back on the field today. Bring water, cleats, and energy. Offseason training runs Mondays, Tuesdays & Thursdays from 6:00–7:00 PM through the summer. Let's get to work."
+      body: "We're very excited to get back on the field today. Bring water, cleats, and energy. Offseason training runs Mondays, Tuesdays & Thursdays from 6:00–8:00 PM through the summer. Let's get to work."
     },
     {
       date: "2026-05-21",
@@ -215,7 +215,14 @@ window.RJW = {
   teams: [
     { divisionId: "g12",  name: "Grades 1/2",       coach: "TBA", roster: [] },
     { divisionId: "g23",  name: "Grades 2/3",       coach: "TBA", roster: [] },
-    { divisionId: "g34",  name: "Grades 3/4",       coach: "TBA", roster: [] },
+    { divisionId: "g34",  name: "Grades 3/4",       coach: "TBA", roster: [
+      { number: "7",  name: "Sample Player", position: "QB / DB", grade: "4th", photo: "", sample: true, bio: "This is sample data so you can see the profile layout — replace with your real roster in assets/js/data.js." },
+      { number: "22", name: "Sample Player", position: "RB / LB", grade: "3rd", photo: "", sample: true },
+      { number: "55", name: "Sample Player", position: "OL / DL", grade: "4th", photo: "", sample: true },
+      { number: "12", name: "Sample Player", position: "WR / CB", grade: "3rd", photo: "", sample: true },
+      { number: "80", name: "Sample Player", position: "TE / DE", grade: "4th", photo: "", sample: true },
+      { number: "3",  name: "Sample Player", position: "K / WR",  grade: "3rd", photo: "", sample: true }
+    ] },
     { divisionId: "g45",  name: "Grades 4/5",       coach: "TBA", roster: [] },
     { divisionId: "cheer",name: "Cheer — Grades 1st–5th", coach: "TBA", roster: [] }
     /* To publish a roster, fill its array, e.g.:
@@ -224,7 +231,9 @@ window.RJW = {
 
   /* ----- Coaching staff (replace placeholders) ----------------------- */
   coaches: [
-    { name: "Coaching Staff Announced Soon", role: "Head Coach", team: "Program", bio: "Our volunteer coaches are announced before each season. Interested in coaching? Email us — we'd love your help.", sample: true }
+    { name: "Head Football Coach", role: "Head Coach", team: "Football", photo: "", bio: "Our volunteer football staff is announced before each season. Sample profile — swap in your coach's name, photo, and a short bio.", sample: true },
+    { name: "Head Cheer Coach", role: "Head Coach", team: "Cheer", photo: "", bio: "Leads the Junior Wolves cheer program. Sample profile — add your coach's name, photo, and bio.", sample: true },
+    { name: "Assistant Coach", role: "Assistant Coach", team: "Program", photo: "", bio: "Assistant coaches run drills and support game days. Want to coach? Email us — we'd love your help.", sample: true }
   ],
 
   /* ----- Sponsors -----------------------------------------------------
@@ -247,7 +256,7 @@ window.RJW = {
   /* ----- FAQ ---------------------------------------------------------- */
   faqs: [
     { q: "What grades can play?", a: "We field youth football teams by grade level (grades 1st–5th), plus a cheer program for grades 1st–5th. Your athlete's team is set by their grade." },
-    { q: "When and where are practices?", a: "Practice is Mondays, Tuesdays & Thursdays, 6:00–7:00 PM at Old Rome Middle School (1000 Veterans Memorial Hwy NE, Rome, GA). Regular-season practice schedules are shared with registered families before the fall season." },
+    { q: "When and where are practices?", a: "Practice is Mondays, Tuesdays & Thursdays, 6:00–8:00 PM at Old Rome Middle School (1000 Veterans Memorial Hwy NE, Rome, GA). Regular-season practice schedules are shared with registered families before the fall season." },
     { q: "When are games played?", a: "Games are played on Saturdays during the fall season. The full game schedule is released closer to kickoff — watch the Schedule page and our Facebook for updates." },
     { q: "How do I register?", a: "Click any \"Register\" button on this site to go to our Cobb Football League portal. You'll need your child's birth certificate and a few minutes to complete the forms." },
     { q: "What equipment do we need?", a: "Football players need cleats and a water bottle to start; the program coordinates helmets and pads. Cheer athletes receive uniform details after signing up. We'll send fitting and hand-out dates by email." },

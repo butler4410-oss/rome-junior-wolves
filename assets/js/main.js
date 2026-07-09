@@ -256,9 +256,10 @@
   R.coaches = function (node) {
     node.innerHTML = (D.coaches || []).map(function (c) {
       var initials = (c.name || "").split(" ").map(function (w) { return w[0]; }).slice(0, 2).join("").toUpperCase();
-      return '<div class="card coach-card reveal">' +
-        (c.sample ? "" : '<div class="coach-avatar">' + esc(initials) + "</div>") +
-        (c.sample ? '<div class="coach-avatar">&#9733;</div>' : "") +
+      var avatar = c.photo
+        ? '<div class="coach-avatar has-photo"><img src="' + esc(c.photo) + '" alt="' + esc(c.name) + '" loading="lazy"></div>'
+        : (c.sample ? '<div class="coach-avatar">&#9733;</div>' : '<div class="coach-avatar">' + esc(initials) + "</div>");
+      return '<div class="card coach-card reveal">' + avatar +
         '<div class="role">' + esc(c.role) + (c.team ? " · " + esc(c.team) : "") + "</div>" +
         "<h3 style=\"font-size:1.2rem;margin-top:.3rem\">" + esc(c.name) + "</h3>" +
         (c.bio ? '<p class="mt-1" style="font-size:.92rem">' + esc(c.bio) + "</p>" : "") +
@@ -349,9 +350,13 @@
     $(".m-head .num", modalEl).textContent = "#" + p.number;
     $(".m-head .nm", modalEl).textContent = p.name;
     var rows = [["Team", team], ["Position", p.position || "—"], ["Grade", p.grade || "—"], ["Number", "#" + p.number]];
-    $(".m-body", modalEl).innerHTML = rows.map(function (r) {
-      return '<div class="m-row"><span>' + esc(r[0]) + "</span><strong>" + esc(r[1]) + "</strong></div>";
-    }).join("") + (p.sample ? '<p style="font-size:.85rem;color:var(--text-soft);margin-top:.5rem">This is a sample profile. Coaches: edit rosters in <code>assets/js/data.js</code>.</p>' : "");
+    $(".m-body", modalEl).innerHTML =
+      (p.photo ? '<div class="m-photo"><img src="' + esc(p.photo) + '" alt="' + esc(p.name) + '"></div>' : "") +
+      rows.map(function (r) {
+        return '<div class="m-row"><span>' + esc(r[0]) + "</span><strong>" + esc(r[1]) + "</strong></div>";
+      }).join("") +
+      (p.bio ? '<p class="m-bio">' + esc(p.bio) + "</p>" : "") +
+      (p.sample ? '<p style="font-size:.85rem;color:var(--text-soft);margin-top:.5rem">This is a sample profile. Coaches: edit rosters in <code>assets/js/data.js</code>.</p>' : "");
     lastFocus = document.activeElement;
     modalEl.classList.add("open");
     document.body.classList.add("modal-open");
