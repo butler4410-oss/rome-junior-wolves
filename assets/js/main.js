@@ -401,9 +401,14 @@
     var base = cfg.supabaseUrl.replace(/\/$/, "") + "/rest/v1/";
     var headers = { apikey: cfg.supabaseAnonKey, Authorization: "Bearer " + cfg.supabaseAnonKey };
     function get(path) {
-      return fetch(base + path, { headers: headers }).then(function (r) {
+      var ctrl = ("AbortController" in window) ? new AbortController() : null;
+      var to = ctrl ? setTimeout(function () { ctrl.abort(); }, 4000) : null;
+      var opts = { headers: headers };
+      if (ctrl) opts.signal = ctrl.signal;
+      return fetch(base + path, opts).then(function (r) {
+        if (to) clearTimeout(to);
         return r.ok ? r.json() : null;
-      }).catch(function () { return null; });
+      }).catch(function () { if (to) clearTimeout(to); return null; });
     }
     return Promise.all([
       get("coaches?select=*&order=sort_order.asc"),

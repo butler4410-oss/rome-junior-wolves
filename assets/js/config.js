@@ -20,9 +20,8 @@ window.RJW_CONFIG = {
   // Public bucket that holds coach/player photos and flyers uploaded
   // from the admin panel.
   mediaBucket:     "media",
-  // Leave FALSE until you've run supabase/admin-schema.sql and added
-  // content in /admin. Flip to TRUE to let the public pages read live
-  // coaches / players / news / events from Supabase (falls back to the
-  // content in data.js for anything not yet added).
-  contentApi:      false
+  // Public pages read live coaches / players / news / events from
+  // Supabase (falls back to the content in data.js for anything not yet
+  // added). Turned on 2026-07-09 after running supabase/admin-schema.sql.
+  contentApi:      true
 };
