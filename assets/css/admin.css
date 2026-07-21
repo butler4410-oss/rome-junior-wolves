@@ -5,7 +5,7 @@
 
 /* ---------- centered screens (boot / login) ---------- */
 .admin-center { min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; }
-.admin-spinner { width: 42px; height: 42px; border: 4px solid #e3dcd6; border-top-color: var(--red, #9E1B32); border-radius: 50%; animation: aspin .8s linear infinite; margin: 0 auto 1rem; }
+.admin-spinner { width: 42px; height: 42px; border: 4px solid #e3dcd6; border-top-color: var(--red, #C8102E); border-radius: 50%; animation: aspin .8s linear infinite; margin: 0 auto 1rem; }
 @keyframes aspin { to { transform: rotate(360deg); } }
 
 .admin-login-card { background: #fff; border-radius: 18px; box-shadow: 0 18px 50px rgba(0,0,0,.14); padding: 2.4rem 2.2rem; width: 100%; max-width: 400px; text-align: center; display: flex; flex-direction: column; gap: .55rem; }
@@ -13,7 +13,7 @@
 .admin-login-card h1 { font-family: var(--f-display, "Anton"), sans-serif; font-size: 2rem; text-transform: uppercase; letter-spacing: .01em; }
 .admin-login-card label { text-align: left; font-family: var(--f-head, "Oswald"), sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; font-size: .78rem; color: var(--text-soft, #6b5b5e); margin-top: .5rem; }
 .admin-login-card input { padding: .8rem 1rem; border: 1px solid var(--line, #e2d9d5); border-radius: 10px; font: inherit; background: #fff; }
-.admin-login-card input:focus { outline: 2px solid var(--red, #9E1B32); outline-offset: 1px; }
+.admin-login-card input:focus { outline: 2px solid var(--red, #C8102E); outline-offset: 1px; }
 .admin-login-card .btn { margin-top: 1rem; }
 .admin-back { margin-top: 1rem; text-decoration: none; }
 .admin-muted { color: var(--text-soft, #6b5b5e); font-size: .9rem; }
@@ -32,8 +32,8 @@
 /* ---------- tabs ---------- */
 .admin-tabs { display: flex; gap: .3rem; background: #fff; padding: .4rem .8rem 0; border-bottom: 1px solid var(--line, #e2d9d5); position: sticky; top: 52px; z-index: 15; overflow-x: auto; }
 .admin-tabs button { border: 0; background: none; font: inherit; font-family: var(--f-head, "Oswald"), sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; font-size: .9rem; color: var(--text-soft, #6b5b5e); padding: .8rem 1rem; cursor: pointer; border-bottom: 3px solid transparent; white-space: nowrap; }
-.admin-tabs button:hover { color: var(--red, #9E1B32); }
-.admin-tabs button.active { color: var(--red, #9E1B32); border-bottom-color: var(--red, #9E1B32); }
+.admin-tabs button:hover { color: var(--red, #C8102E); }
+.admin-tabs button.active { color: var(--red, #C8102E); border-bottom-color: var(--red, #C8102E); }
 
 /* ---------- main ---------- */
 .admin-main { max-width: 860px; margin: 0 auto; padding: 1.6rem 1.2rem 4rem; }
@@ -60,7 +60,7 @@
 .admin-field > label { font-family: var(--f-head, "Oswald"), sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; font-size: .76rem; color: var(--text-soft, #6b5b5e); }
 .admin-field input, .admin-field textarea, .admin-field select { padding: .7rem .85rem; border: 1px solid var(--line, #e2d9d5); border-radius: 9px; font: inherit; background: #fff; width: 100%; }
 .admin-field textarea { resize: vertical; }
-.admin-field input:focus, .admin-field textarea:focus, .admin-field select:focus { outline: 2px solid var(--red, #9E1B32); outline-offset: 1px; }
+.admin-field input:focus, .admin-field textarea:focus, .admin-field select:focus { outline: 2px solid var(--red, #C8102E); outline-offset: 1px; }
 .admin-check { flex-direction: row !important; align-items: center; gap: .5rem; font-family: var(--f-head, "Oswald"), sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; font-size: .82rem; color: var(--text, #1a1012); }
 .admin-check input { width: auto; }
 
