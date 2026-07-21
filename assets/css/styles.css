@@ -5,10 +5,10 @@
 
 :root {
   /* Brand palette (sampled from the team logo) */
-  --red:        #9E1B32;
-  --red-bright: #BE1E3A;
-  --red-dark:   #6E0F20;
-  --red-deep:   #4A0A16;
+  --red:        #C8102E;
+  --red-bright: #E31837;
+  --red-dark:   #9B0E22;
+  --red-deep:   #7A0A1A;
   --ink:            #1A1012;   /* warm near-black */
   --ink-2:          #2A1A1E;
   --gold:           #C9A24A;
@@ -431,7 +431,7 @@ select, textarea, input[type=file] {
   width: 100%; padding: .8rem 1rem; border: 1.5px solid var(--line); border-radius: 10px;
   font: inherit; color: var(--text); background: var(--paper); transition: border-color .15s, box-shadow .15s;
 }
-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239E1B32' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 16px; padding-right: 2.6rem; }
+select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C8102E' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 16px; padding-right: 2.6rem; }
 input:focus, select:focus, textarea:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px rgba(158,27,50,.14); }
 input:user-invalid, select:user-invalid, textarea:user-invalid { border-color: var(--red-bright); }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }

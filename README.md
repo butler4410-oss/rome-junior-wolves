@@ -103,6 +103,6 @@ Point your custom domain (e.g. `romejuniorwolves.com`) at whichever host you pic
 ---
 
 ## Brand
-- **Crimson** `#9E1B32` · **Gold** `#C9A24A` · **Warm black** `#1A1012`
+- **Red** `#C8102E` · **Gold** `#C9A24A` · **Warm black** `#1A1012`
 - Logo and hero photo were taken from the team's own materials.
 - Fonts: Anton + Oswald (display) and Inter (body), loaded from Google Fonts.
