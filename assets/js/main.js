@@ -256,9 +256,10 @@
   R.coaches = function (node) {
     node.innerHTML = (D.coaches || []).map(function (c) {
       var initials = (c.name || "").split(" ").map(function (w) { return w[0]; }).slice(0, 2).join("").toUpperCase();
-      return '<div class="card coach-card reveal">' +
-        (c.sample ? "" : '<div class="coach-avatar">' + esc(initials) + "</div>") +
-        (c.sample ? '<div class="coach-avatar">&#9733;</div>' : "") +
+      var avatar = c.photo
+        ? '<div class="coach-avatar has-photo"><img src="' + esc(c.photo) + '" alt="' + esc(c.name) + '" loading="lazy"></div>'
+        : (c.sample ? '<div class="coach-avatar">&#9733;</div>' : '<div class="coach-avatar">' + esc(initials) + "</div>");
+      return '<div class="card coach-card reveal">' + avatar +
         '<div class="role">' + esc(c.role) + (c.team ? " · " + esc(c.team) : "") + "</div>" +
         "<h3 style=\"font-size:1.2rem;margin-top:.3rem\">" + esc(c.name) + "</h3>" +
         (c.bio ? '<p class="mt-1" style="font-size:.92rem">' + esc(c.bio) + "</p>" : "") +
@@ -349,9 +350,13 @@
     $(".m-head .num", modalEl).textContent = "#" + p.number;
     $(".m-head .nm", modalEl).textContent = p.name;
     var rows = [["Team", team], ["Position", p.position || "—"], ["Grade", p.grade || "—"], ["Number", "#" + p.number]];
-    $(".m-body", modalEl).innerHTML = rows.map(function (r) {
-      return '<div class="m-row"><span>' + esc(r[0]) + "</span><strong>" + esc(r[1]) + "</strong></div>";
-    }).join("") + (p.sample ? '<p style="font-size:.85rem;color:var(--text-soft);margin-top:.5rem">This is a sample profile. Coaches: edit rosters in <code>assets/js/data.js</code>.</p>' : "");
+    $(".m-body", modalEl).innerHTML =
+      (p.photo ? '<div class="m-photo"><img src="' + esc(p.photo) + '" alt="' + esc(p.name) + '"></div>' : "") +
+      rows.map(function (r) {
+        return '<div class="m-row"><span>' + esc(r[0]) + "</span><strong>" + esc(r[1]) + "</strong></div>";
+      }).join("") +
+      (p.bio ? '<p class="m-bio">' + esc(p.bio) + "</p>" : "") +
+      (p.sample ? '<p style="font-size:.85rem;color:var(--text-soft);margin-top:.5rem">This is a sample profile. Coaches: edit rosters in <code>assets/js/data.js</code>.</p>' : "");
     lastFocus = document.activeElement;
     modalEl.classList.add("open");
     document.body.classList.add("modal-open");
@@ -385,10 +390,47 @@
     els.forEach(function (e) { io.observe(e); });
   }
 
+  /* ---------- optional: live content from Supabase ----------
+     When RJW_CONFIG.contentApi is true, pull coaches/players/news/events
+     from Supabase and use them in place of the data.js defaults. Any
+     collection that errors or comes back empty falls back to data.js,
+     so the site never renders worse than it does today. */
+  function syncContent() {
+    var cfg = window.RJW_CONFIG || {};
+    if (!cfg.contentApi || !cfg.supabaseUrl || !cfg.supabaseAnonKey) return Promise.resolve();
+    var base = cfg.supabaseUrl.replace(/\/$/, "") + "/rest/v1/";
+    var headers = { apikey: cfg.supabaseAnonKey, Authorization: "Bearer " + cfg.supabaseAnonKey };
+    function get(path) {
+      var ctrl = ("AbortController" in window) ? new AbortController() : null;
+      var to = ctrl ? setTimeout(function () { ctrl.abort(); }, 4000) : null;
+      var opts = { headers: headers };
+      if (ctrl) opts.signal = ctrl.signal;
+      return fetch(base + path, opts).then(function (r) {
+        if (to) clearTimeout(to);
+        return r.ok ? r.json() : null;
+      }).catch(function () { if (to) clearTimeout(to); return null; });
+    }
+    return Promise.all([
+      get("coaches?select=*&order=sort_order.asc"),
+      get("players?select=*&order=sort_order.asc,number.asc"),
+      get("news?select=*&order=date.desc"),
+      get("events?select=*&order=date.asc")
+    ]).then(function (res) {
+      var coaches = res[0], players = res[1], news = res[2], events = res[3];
+      if (coaches && coaches.length) D.coaches = coaches;
+      if (news && news.length) D.news = news;
+      if (events && events.length) D.events = events;
+      if (players && players.length) {
+        (D.teams || []).forEach(function (t) {
+          var rp = players.filter(function (p) { return p.division_id === t.divisionId; });
+          if (rp.length) t.roster = rp;
+        });
+      }
+    }).catch(function () {});
+  }
+
   /* ---------- boot ---------- */
-  function boot() {
-    buildHeader();
-    buildFooter();
+  function renderAll() {
     $all("[data-render]").forEach(function (node) {
       var fn = R[node.getAttribute("data-render")];
       if (fn) fn(node);
@@ -399,6 +441,11 @@
     if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
       $all(".admin-note").forEach(function (n) { n.style.display = "none"; });
     }
+  }
+  function boot() {
+    buildHeader();
+    buildFooter();
+    syncContent().then(renderAll);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();

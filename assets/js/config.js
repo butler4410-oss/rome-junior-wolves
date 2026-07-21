@@ -14,5 +14,14 @@
 window.RJW_CONFIG = {
   supabaseUrl:     "https://jqrgcwyiouzvlypyssql.supabase.co",
   supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impxcmdjd3lpb3V6dmx5cHlzc3FsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4ODU4NDIsImV4cCI6MjA5NzQ2MTg0Mn0.MynGqizki_GgQsnSorcZA2BcUSFo5EWiQs66Ptjiq-g",
-  docsBucket:      "registration-docs"
+  docsBucket:      "registration-docs",
+
+  // ---- Admin panel (/admin) & live content -------------------------
+  // Public bucket that holds coach/player photos and flyers uploaded
+  // from the admin panel.
+  mediaBucket:     "media",
+  // Public pages read live coaches / players / news / events from
+  // Supabase (falls back to the content in data.js for anything not yet
+  // added). Turned on 2026-07-09 after running supabase/admin-schema.sql.
+  contentApi:      true
 };
